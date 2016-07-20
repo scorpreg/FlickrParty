@@ -1,0 +1,374 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		012FBC841D3F964D008F0912 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 012FBC831D3F964D008F0912 /* main.m */; };
+		012FBC871D3F964D008F0912 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 012FBC861D3F964D008F0912 /* AppDelegate.m */; };
+		012FBC8A1D3F964D008F0912 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 012FBC891D3F964D008F0912 /* ViewController.m */; };
+		012FBC8F1D3F964D008F0912 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 012FBC8E1D3F964D008F0912 /* Assets.xcassets */; };
+		012FBC9B1D3F9817008F0912 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 012FBC9A1D3F9817008F0912 /* MainViewController.m */; };
+		012FBC9E1D3F9B05008F0912 /* NetworkService.m in Sources */ = {isa = PBXBuildFile; fileRef = 012FBC9D1D3F9B05008F0912 /* NetworkService.m */; };
+		012FBCAD1D3FA01A008F0912 /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 012FBCA31D3FA01A008F0912 /* OpenSans-Bold.ttf */; };
+		012FBCAE1D3FA01A008F0912 /* OpenSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 012FBCA41D3FA01A008F0912 /* OpenSans-BoldItalic.ttf */; };
+		012FBCAF1D3FA01A008F0912 /* OpenSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 012FBCA51D3FA01A008F0912 /* OpenSans-ExtraBold.ttf */; };
+		012FBCB01D3FA01A008F0912 /* OpenSans-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 012FBCA61D3FA01A008F0912 /* OpenSans-ExtraBoldItalic.ttf */; };
+		012FBCB11D3FA01A008F0912 /* OpenSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 012FBCA71D3FA01A008F0912 /* OpenSans-Italic.ttf */; };
+		012FBCB21D3FA01A008F0912 /* OpenSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 012FBCA81D3FA01A008F0912 /* OpenSans-Light.ttf */; };
+		012FBCB31D3FA01A008F0912 /* OpenSans-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 012FBCA91D3FA01A008F0912 /* OpenSans-LightItalic.ttf */; };
+		012FBCB41D3FA01A008F0912 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 012FBCAA1D3FA01A008F0912 /* OpenSans-Regular.ttf */; };
+		012FBCB51D3FA01A008F0912 /* OpenSans-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 012FBCAB1D3FA01A008F0912 /* OpenSans-Semibold.ttf */; };
+		012FBCB61D3FA01A008F0912 /* OpenSans-SemiboldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 012FBCAC1D3FA01A008F0912 /* OpenSans-SemiboldItalic.ttf */; };
+		012FBCBA1D3FAC2C008F0912 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 012FBCB91D3FAC2C008F0912 /* Podfile */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		012FBC7F1D3F964C008F0912 /* FlickrParty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlickrParty.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		012FBC831D3F964D008F0912 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		012FBC851D3F964D008F0912 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		012FBC861D3F964D008F0912 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		012FBC881D3F964D008F0912 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		012FBC891D3F964D008F0912 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		012FBC8E1D3F964D008F0912 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		012FBC931D3F964D008F0912 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		012FBC991D3F9817008F0912 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		012FBC9A1D3F9817008F0912 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		012FBC9C1D3F9B05008F0912 /* NetworkService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkService.h; sourceTree = "<group>"; };
+		012FBC9D1D3F9B05008F0912 /* NetworkService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkService.m; sourceTree = "<group>"; };
+		012FBCA31D3FA01A008F0912 /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Bold.ttf"; sourceTree = "<group>"; };
+		012FBCA41D3FA01A008F0912 /* OpenSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-BoldItalic.ttf"; sourceTree = "<group>"; };
+		012FBCA51D3FA01A008F0912 /* OpenSans-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-ExtraBold.ttf"; sourceTree = "<group>"; };
+		012FBCA61D3FA01A008F0912 /* OpenSans-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
+		012FBCA71D3FA01A008F0912 /* OpenSans-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Italic.ttf"; sourceTree = "<group>"; };
+		012FBCA81D3FA01A008F0912 /* OpenSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Light.ttf"; sourceTree = "<group>"; };
+		012FBCA91D3FA01A008F0912 /* OpenSans-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-LightItalic.ttf"; sourceTree = "<group>"; };
+		012FBCAA1D3FA01A008F0912 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
+		012FBCAB1D3FA01A008F0912 /* OpenSans-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Semibold.ttf"; sourceTree = "<group>"; };
+		012FBCAC1D3FA01A008F0912 /* OpenSans-SemiboldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-SemiboldItalic.ttf"; sourceTree = "<group>"; };
+		012FBCB91D3FAC2C008F0912 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		012FBC7C1D3F964C008F0912 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		012FBC761D3F964C008F0912 = {
+			isa = PBXGroup;
+			children = (
+				012FBC811D3F964D008F0912 /* FlickrParty */,
+				012FBC801D3F964C008F0912 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		012FBC801D3F964C008F0912 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				012FBC7F1D3F964C008F0912 /* FlickrParty.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		012FBC811D3F964D008F0912 /* FlickrParty */ = {
+			isa = PBXGroup;
+			children = (
+				012FBC851D3F964D008F0912 /* AppDelegate.h */,
+				012FBC861D3F964D008F0912 /* AppDelegate.m */,
+				012FBC881D3F964D008F0912 /* ViewController.h */,
+				012FBC891D3F964D008F0912 /* ViewController.m */,
+				012FBC9F1D3F9B1A008F0912 /* Main */,
+				012FBCA01D3F9B24008F0912 /* Service */,
+				012FBCA11D3FA008008F0912 /* Resources */,
+				012FBC8E1D3F964D008F0912 /* Assets.xcassets */,
+				012FBC821D3F964D008F0912 /* Supporting Files */,
+			);
+			path = FlickrParty;
+			sourceTree = "<group>";
+		};
+		012FBC821D3F964D008F0912 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				012FBC931D3F964D008F0912 /* Info.plist */,
+				012FBC831D3F964D008F0912 /* main.m */,
+				012FBCB91D3FAC2C008F0912 /* Podfile */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		012FBC9F1D3F9B1A008F0912 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				012FBC991D3F9817008F0912 /* MainViewController.h */,
+				012FBC9A1D3F9817008F0912 /* MainViewController.m */,
+			);
+			name = Main;
+			sourceTree = "<group>";
+		};
+		012FBCA01D3F9B24008F0912 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				012FBC9C1D3F9B05008F0912 /* NetworkService.h */,
+				012FBC9D1D3F9B05008F0912 /* NetworkService.m */,
+			);
+			name = Service;
+			sourceTree = "<group>";
+		};
+		012FBCA11D3FA008008F0912 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				012FBCA21D3FA01A008F0912 /* Fonts */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		012FBCA21D3FA01A008F0912 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				012FBCA31D3FA01A008F0912 /* OpenSans-Bold.ttf */,
+				012FBCA41D3FA01A008F0912 /* OpenSans-BoldItalic.ttf */,
+				012FBCA51D3FA01A008F0912 /* OpenSans-ExtraBold.ttf */,
+				012FBCA61D3FA01A008F0912 /* OpenSans-ExtraBoldItalic.ttf */,
+				012FBCA71D3FA01A008F0912 /* OpenSans-Italic.ttf */,
+				012FBCA81D3FA01A008F0912 /* OpenSans-Light.ttf */,
+				012FBCA91D3FA01A008F0912 /* OpenSans-LightItalic.ttf */,
+				012FBCAA1D3FA01A008F0912 /* OpenSans-Regular.ttf */,
+				012FBCAB1D3FA01A008F0912 /* OpenSans-Semibold.ttf */,
+				012FBCAC1D3FA01A008F0912 /* OpenSans-SemiboldItalic.ttf */,
+			);
+			name = Fonts;
+			path = Resources/Fonts;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		012FBC7E1D3F964C008F0912 /* FlickrParty */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 012FBC961D3F964D008F0912 /* Build configuration list for PBXNativeTarget "FlickrParty" */;
+			buildPhases = (
+				012FBC7B1D3F964C008F0912 /* Sources */,
+				012FBC7C1D3F964C008F0912 /* Frameworks */,
+				012FBC7D1D3F964C008F0912 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FlickrParty;
+			productName = FlickrParty;
+			productReference = 012FBC7F1D3F964C008F0912 /* FlickrParty.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		012FBC771D3F964C008F0912 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = afb;
+				TargetAttributes = {
+					012FBC7E1D3F964C008F0912 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+				};
+			};
+			buildConfigurationList = 012FBC7A1D3F964C008F0912 /* Build configuration list for PBXProject "FlickrParty" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 012FBC761D3F964C008F0912;
+			productRefGroup = 012FBC801D3F964C008F0912 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				012FBC7E1D3F964C008F0912 /* FlickrParty */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		012FBC7D1D3F964C008F0912 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				012FBCAE1D3FA01A008F0912 /* OpenSans-BoldItalic.ttf in Resources */,
+				012FBCAD1D3FA01A008F0912 /* OpenSans-Bold.ttf in Resources */,
+				012FBCB21D3FA01A008F0912 /* OpenSans-Light.ttf in Resources */,
+				012FBCB01D3FA01A008F0912 /* OpenSans-ExtraBoldItalic.ttf in Resources */,
+				012FBCB51D3FA01A008F0912 /* OpenSans-Semibold.ttf in Resources */,
+				012FBCB11D3FA01A008F0912 /* OpenSans-Italic.ttf in Resources */,
+				012FBCBA1D3FAC2C008F0912 /* Podfile in Resources */,
+				012FBC8F1D3F964D008F0912 /* Assets.xcassets in Resources */,
+				012FBCB31D3FA01A008F0912 /* OpenSans-LightItalic.ttf in Resources */,
+				012FBCB41D3FA01A008F0912 /* OpenSans-Regular.ttf in Resources */,
+				012FBCAF1D3FA01A008F0912 /* OpenSans-ExtraBold.ttf in Resources */,
+				012FBCB61D3FA01A008F0912 /* OpenSans-SemiboldItalic.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		012FBC7B1D3F964C008F0912 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				012FBC8A1D3F964D008F0912 /* ViewController.m in Sources */,
+				012FBC871D3F964D008F0912 /* AppDelegate.m in Sources */,
+				012FBC841D3F964D008F0912 /* main.m in Sources */,
+				012FBC9B1D3F9817008F0912 /* MainViewController.m in Sources */,
+				012FBC9E1D3F9B05008F0912 /* NetworkService.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		012FBC941D3F964D008F0912 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		012FBC951D3F964D008F0912 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		012FBC971D3F964D008F0912 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = FlickrParty/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.afb.FlickrParty;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		012FBC981D3F964D008F0912 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = FlickrParty/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.afb.FlickrParty;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		012FBC7A1D3F964C008F0912 /* Build configuration list for PBXProject "FlickrParty" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				012FBC941D3F964D008F0912 /* Debug */,
+				012FBC951D3F964D008F0912 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		012FBC961D3F964D008F0912 /* Build configuration list for PBXNativeTarget "FlickrParty" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				012FBC971D3F964D008F0912 /* Debug */,
+				012FBC981D3F964D008F0912 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 012FBC771D3F964C008F0912 /* Project object */;
+}
