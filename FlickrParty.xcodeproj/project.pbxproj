@@ -23,7 +23,8 @@
 		012FBCB41D3FA01A008F0912 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 012FBCAA1D3FA01A008F0912 /* OpenSans-Regular.ttf */; };
 		012FBCB51D3FA01A008F0912 /* OpenSans-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 012FBCAB1D3FA01A008F0912 /* OpenSans-Semibold.ttf */; };
 		012FBCB61D3FA01A008F0912 /* OpenSans-SemiboldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 012FBCAC1D3FA01A008F0912 /* OpenSans-SemiboldItalic.ttf */; };
-		012FBCBA1D3FAC2C008F0912 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 012FBCB91D3FAC2C008F0912 /* Podfile */; };
+		012FBCBC1D3FAD2C008F0912 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 012FBCBB1D3FAD2C008F0912 /* Podfile */; };
+		FB7DD05512F55E64625DD166 /* libPods-FlickrParty.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 97B6204A591CEC777F614A77 /* libPods-FlickrParty.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,7 +50,10 @@
 		012FBCAA1D3FA01A008F0912 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
 		012FBCAB1D3FA01A008F0912 /* OpenSans-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Semibold.ttf"; sourceTree = "<group>"; };
 		012FBCAC1D3FA01A008F0912 /* OpenSans-SemiboldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-SemiboldItalic.ttf"; sourceTree = "<group>"; };
-		012FBCB91D3FAC2C008F0912 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		012FBCBB1D3FAD2C008F0912 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; };
+		39F7A5A0039E5579B4808710 /* Pods-FlickrParty.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlickrParty.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FlickrParty/Pods-FlickrParty.debug.xcconfig"; sourceTree = "<group>"; };
+		94606C4BC6B55F052D8EF74A /* Pods-FlickrParty.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlickrParty.release.xcconfig"; path = "Pods/Target Support Files/Pods-FlickrParty/Pods-FlickrParty.release.xcconfig"; sourceTree = "<group>"; };
+		97B6204A591CEC777F614A77 /* libPods-FlickrParty.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FlickrParty.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB7DD05512F55E64625DD166 /* libPods-FlickrParty.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,6 +73,8 @@
 			children = (
 				012FBC811D3F964D008F0912 /* FlickrParty */,
 				012FBC801D3F964C008F0912 /* Products */,
+				A07A821532AF0765A26C498E /* Pods */,
+				B352BF6BA37C2CDFC0B88952 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -98,9 +105,9 @@
 		012FBC821D3F964D008F0912 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				012FBCBB1D3FAD2C008F0912 /* Podfile */,
 				012FBC931D3F964D008F0912 /* Info.plist */,
 				012FBC831D3F964D008F0912 /* main.m */,
-				012FBCB91D3FAC2C008F0912 /* Podfile */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -149,6 +156,23 @@
 			path = Resources/Fonts;
 			sourceTree = "<group>";
 		};
+		A07A821532AF0765A26C498E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				39F7A5A0039E5579B4808710 /* Pods-FlickrParty.debug.xcconfig */,
+				94606C4BC6B55F052D8EF74A /* Pods-FlickrParty.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		B352BF6BA37C2CDFC0B88952 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				97B6204A591CEC777F614A77 /* libPods-FlickrParty.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -156,9 +180,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 012FBC961D3F964D008F0912 /* Build configuration list for PBXNativeTarget "FlickrParty" */;
 			buildPhases = (
+				858DDFCE47EAD947C695D721 /* [CP] Check Pods Manifest.lock */,
 				012FBC7B1D3F964C008F0912 /* Sources */,
 				012FBC7C1D3F964C008F0912 /* Frameworks */,
 				012FBC7D1D3F964C008F0912 /* Resources */,
+				5E9258455F9B27C500D94C53 /* [CP] Embed Pods Frameworks */,
+				35541A18596F56139DE0A67B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -212,7 +239,7 @@
 				012FBCB01D3FA01A008F0912 /* OpenSans-ExtraBoldItalic.ttf in Resources */,
 				012FBCB51D3FA01A008F0912 /* OpenSans-Semibold.ttf in Resources */,
 				012FBCB11D3FA01A008F0912 /* OpenSans-Italic.ttf in Resources */,
-				012FBCBA1D3FAC2C008F0912 /* Podfile in Resources */,
+				012FBCBC1D3FAD2C008F0912 /* Podfile in Resources */,
 				012FBC8F1D3F964D008F0912 /* Assets.xcassets in Resources */,
 				012FBCB31D3FA01A008F0912 /* OpenSans-LightItalic.ttf in Resources */,
 				012FBCB41D3FA01A008F0912 /* OpenSans-Regular.ttf in Resources */,
@@ -222,6 +249,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		35541A18596F56139DE0A67B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FlickrParty/Pods-FlickrParty-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5E9258455F9B27C500D94C53 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FlickrParty/Pods-FlickrParty-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		858DDFCE47EAD947C695D721 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		012FBC7B1D3F964C008F0912 /* Sources */ = {
@@ -323,6 +398,7 @@
 		};
 		012FBC971D3F964D008F0912 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 39F7A5A0039E5579B4808710 /* Pods-FlickrParty.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -336,6 +412,7 @@
 		};
 		012FBC981D3F964D008F0912 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 94606C4BC6B55F052D8EF74A /* Pods-FlickrParty.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
