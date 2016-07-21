@@ -13,8 +13,6 @@
 
 - (void)fillWithData:(CellData*)data
 {
-   
-    
     float photoWidth = [[UIScreen mainScreen] bounds].size.width;
     
     UIImageView* photo = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, photoWidth, data.imageHeight_small * (photoWidth / data.imageWidth_small))];
@@ -57,7 +55,6 @@
     [dateLabel setFont:[UIFont fontWithName:@"OpenSans-Light" size:14.0f]];
     [dateLabel setTextColor:[UIColor colorWithWhite:0.4 alpha:1.0f]];
     [self addSubview:dateLabel];
-    
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

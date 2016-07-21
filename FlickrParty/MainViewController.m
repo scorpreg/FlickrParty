@@ -14,12 +14,13 @@
 
 @interface MainViewController ()
 
-@property (nonatomic, strong) NSDictionary* receivedData;
+@property (nonatomic, strong) NSMutableArray* feedArray;
 @property (nonatomic, strong) UIView *topBar;
 @property (nonatomic, strong) UIImageView *logoImageView, *topLine;
 @property (nonatomic, strong) UITableView* tableView;
 @property (nonatomic, assign) BOOL didSetupConstraints;
-@property int page;
+@property (nonatomic, strong) UIRefreshControl* refreshControl;
+@property int page, totalPage;
 
 @end
 
@@ -29,7 +30,7 @@
 {
     self.view = [UIView new];
     self.view.backgroundColor = [UIColor colorWithWhite:1.0 alpha:1.0];
-    
+
     [self.view addSubview:self.topBar];
     [self.view addSubview:self.topLine];
     [self.view addSubview:self.tableView];
@@ -41,16 +42,31 @@
     [super viewDidLoad];
     
     self.page = 1;
-    
-    [[NetworkService alloc] getFeedWithPage:self.page completionHandler:^(id responseObject, NSError *error) {
-        self.receivedData = responseObject;
-        [self.tableView reloadData];
-        NSLog(@"response %@",responseObject);
-    }];
-    
-    // Do any additional setup after loading the view, typically from a nib.
+    self.feedArray = [[NSMutableArray alloc] init];
+    [self getFeedElements];
 }
 
+- (void)getFeedElements
+{
+    [[NetworkService alloc] getFeedWithPage:self.page completionHandler:^(id responseObject, NSError *error) {
+        //Get feed objects from flicker API, then add the feedArray
+        [self.feedArray addObjectsFromArray:[responseObject valueForKeyPath:@"photos.photo"]];
+        
+        self.totalPage = [[responseObject valueForKeyPath:@"photos.pages"] intValue];
+        [self.tableView reloadData];
+        
+        //If refresh control is alive, then finish it.
+        if(self.refreshControl)
+        [self.refreshControl endRefreshing];
+    }];
+}
+
+- (void)refreshData
+{
+    self.page = 1;
+    self.feedArray = [[NSMutableArray alloc] init];
+    [self getFeedElements];
+}
 
 - (void)updateViewConstraints
 {
@@ -94,6 +110,7 @@
 - (UIImageView*)topLine
 {
     if (!_topLine) {
+        //Tiny little line
         _topLine = [UIImageView newAutoLayoutView];
         [_topLine setBackgroundColor:[UIColor colorWithWhite:0.8f alpha:1.0f]];        
     }
@@ -109,11 +126,17 @@
         [_tableView setDelegate:self];
         [_tableView setDataSource:self];
         [_tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
+        
+        //Pull to refresh object
+        self.refreshControl = [[UIRefreshControl alloc] init];
+        self.refreshControl.backgroundColor = [UIColor colorWithRed:0.3 green:0.4 blue:0.6 alpha:1.0f];
+        self.refreshControl.tintColor = [UIColor whiteColor];
+        [self.refreshControl addTarget:self action:@selector(refreshData) forControlEvents:UIControlEventValueChanged];
+        [self.tableView addSubview:self.refreshControl];
+        
     }
     return _tableView;
 }
-
-
 
 #pragma mark - UITableView Delegate/Data Source
 
@@ -121,8 +144,9 @@
 {
     int index = (int)[indexPath indexAtPosition: [indexPath length] - 1];
     
-    NSDictionary* rowData = [[self.receivedData valueForKeyPath:@"photos.photo"] objectAtIndex:index];
+    NSDictionary* rowData = [self.feedArray objectAtIndex:index];
     
+    //Detecting every cell height
     float totalHeight = 70;
     float imageHeight =  [[rowData objectForKey:@"height_z"] floatValue]*([[UIScreen mainScreen] bounds].size.width / [[rowData objectForKey:@"width_z"] floatValue]);
     
@@ -131,16 +155,18 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [[self.receivedData valueForKeyPath:@"photos.photo"] count];
+    return [self.feedArray count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     int index = (int)[indexPath indexAtPosition: [indexPath length] - 1];
     
+    //Convert JSON data to CellData
     CellData* data = [[CellData alloc] init];
-    [data fillWithData:[[self.receivedData valueForKeyPath:@"photos.photo"] objectAtIndex:index]];
+    [data fillWithData:[self.feedArray objectAtIndex:index]];
     
+    //Create cell with CellData
     PhotoCell* cell = [[PhotoCell alloc] init];
     [cell fillWithData:data];
     
@@ -155,12 +181,19 @@
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    //Paging control mechanism
+    if (indexPath.row>self.feedArray.count-2 && self.page<self.totalPage) {
+        self.page += 1;
+        [self getFeedElements];
+    }
 }
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return NO;
 }
+
+#pragma mark - Memory Management
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
