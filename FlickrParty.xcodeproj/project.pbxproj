@@ -24,6 +24,8 @@
 		012FBCB51D3FA01A008F0912 /* OpenSans-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 012FBCAB1D3FA01A008F0912 /* OpenSans-Semibold.ttf */; };
 		012FBCB61D3FA01A008F0912 /* OpenSans-SemiboldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 012FBCAC1D3FA01A008F0912 /* OpenSans-SemiboldItalic.ttf */; };
 		012FBCBC1D3FAD2C008F0912 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 012FBCBB1D3FAD2C008F0912 /* Podfile */; };
+		012FBCC01D40C2EE008F0912 /* PhotoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 012FBCBF1D40C2EE008F0912 /* PhotoCell.m */; };
+		012FBCC31D40C55C008F0912 /* CellData.m in Sources */ = {isa = PBXBuildFile; fileRef = 012FBCC21D40C55C008F0912 /* CellData.m */; };
 		FB7DD05512F55E64625DD166 /* libPods-FlickrParty.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 97B6204A591CEC777F614A77 /* libPods-FlickrParty.a */; };
 /* End PBXBuildFile section */
 
@@ -50,7 +52,11 @@
 		012FBCAA1D3FA01A008F0912 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
 		012FBCAB1D3FA01A008F0912 /* OpenSans-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Semibold.ttf"; sourceTree = "<group>"; };
 		012FBCAC1D3FA01A008F0912 /* OpenSans-SemiboldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-SemiboldItalic.ttf"; sourceTree = "<group>"; };
-		012FBCBB1D3FAD2C008F0912 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; };
+		012FBCBB1D3FAD2C008F0912 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		012FBCBE1D40C2EE008F0912 /* PhotoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoCell.h; sourceTree = "<group>"; };
+		012FBCBF1D40C2EE008F0912 /* PhotoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoCell.m; sourceTree = "<group>"; };
+		012FBCC11D40C55C008F0912 /* CellData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellData.h; sourceTree = "<group>"; };
+		012FBCC21D40C55C008F0912 /* CellData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CellData.m; sourceTree = "<group>"; };
 		39F7A5A0039E5579B4808710 /* Pods-FlickrParty.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlickrParty.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FlickrParty/Pods-FlickrParty.debug.xcconfig"; sourceTree = "<group>"; };
 		94606C4BC6B55F052D8EF74A /* Pods-FlickrParty.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlickrParty.release.xcconfig"; path = "Pods/Target Support Files/Pods-FlickrParty/Pods-FlickrParty.release.xcconfig"; sourceTree = "<group>"; };
 		97B6204A591CEC777F614A77 /* libPods-FlickrParty.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FlickrParty.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -94,6 +100,7 @@
 				012FBC881D3F964D008F0912 /* ViewController.h */,
 				012FBC891D3F964D008F0912 /* ViewController.m */,
 				012FBC9F1D3F9B1A008F0912 /* Main */,
+				012FBCBD1D40C2CC008F0912 /* Objects */,
 				012FBCA01D3F9B24008F0912 /* Service */,
 				012FBCA11D3FA008008F0912 /* Resources */,
 				012FBC8E1D3F964D008F0912 /* Assets.xcassets */,
@@ -154,6 +161,17 @@
 			);
 			name = Fonts;
 			path = Resources/Fonts;
+			sourceTree = "<group>";
+		};
+		012FBCBD1D40C2CC008F0912 /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				012FBCBE1D40C2EE008F0912 /* PhotoCell.h */,
+				012FBCBF1D40C2EE008F0912 /* PhotoCell.m */,
+				012FBCC11D40C55C008F0912 /* CellData.h */,
+				012FBCC21D40C55C008F0912 /* CellData.m */,
+			);
+			name = Objects;
 			sourceTree = "<group>";
 		};
 		A07A821532AF0765A26C498E /* Pods */ = {
@@ -303,10 +321,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				012FBCC01D40C2EE008F0912 /* PhotoCell.m in Sources */,
 				012FBC8A1D3F964D008F0912 /* ViewController.m in Sources */,
 				012FBC871D3F964D008F0912 /* AppDelegate.m in Sources */,
 				012FBC841D3F964D008F0912 /* main.m in Sources */,
 				012FBC9B1D3F9817008F0912 /* MainViewController.m in Sources */,
+				012FBCC31D40C55C008F0912 /* CellData.m in Sources */,
 				012FBC9E1D3F9B05008F0912 /* NetworkService.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

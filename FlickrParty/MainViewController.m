@@ -8,10 +8,13 @@
 
 #import "MainViewController.h"
 #import "NetworkService.h"
+#import "PhotoCell.h"
+#import "CellData.h"
 #import <PureLayout/PureLayout.h>
 
 @interface MainViewController ()
 
+@property (nonatomic, strong) NSDictionary* receivedData;
 @property (nonatomic, strong) UIView *topBar;
 @property (nonatomic, strong) UIImageView *logoImageView, *topLine;
 @property (nonatomic, strong) UITableView* tableView;
@@ -40,6 +43,8 @@
     self.page = 1;
     
     [[NetworkService alloc] getFeedWithPage:self.page completionHandler:^(id responseObject, NSError *error) {
+        self.receivedData = responseObject;
+        [self.tableView reloadData];
         NSLog(@"response %@",responseObject);
     }];
     
@@ -56,17 +61,17 @@
         
         [self.topBar autoPinToTopLayoutGuideOfViewController:self withInset:0.0f];
         [self.topBar autoSetDimension:ALDimensionHeight toSize:44.0f];
-        [self.topBar autoSetDimension:ALDimensionWidth toSize:self.view.frame.size.width];
+        [self.topBar autoSetDimension:ALDimensionWidth toSize:[[UIScreen mainScreen] bounds].size.width];
         
         [self.logoImageView autoCenterInSuperview];
 
-        [self.topLine autoSetDimension:ALDimensionWidth toSize:self.view.frame.size.width];
+        [self.topLine autoSetDimension:ALDimensionWidth toSize:[[UIScreen mainScreen] bounds].size.width];
         [self.topLine autoSetDimension:ALDimensionHeight toSize:1.0f];
-        [self.topLine autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:self.topBar withOffset:0];
+        [self.topLine autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:self.topBar];
         
-        [self.tableView autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:self.topLine withOffset:1];
-        [self.tableView autoSetDimension:ALDimensionWidth toSize:self.view.frame.size.width];
-        [self.tableView autoSetDimension:ALDimensionHeight toSize:self.view.frame.size.height-self.tableView.frame.origin.y];
+        [self.tableView autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:self.topLine withOffset:0];
+        [self.tableView autoSetDimension:ALDimensionWidth toSize:[[UIScreen mainScreen] bounds].size.width];
+        [self.tableView autoSetDimension:ALDimensionHeight toSize:[[UIScreen mainScreen] bounds].size.height - self.tableView.frame.origin.y - 60];
         
         self.didSetupConstraints = YES;
     }
@@ -100,9 +105,10 @@
 {
     if (!_tableView) {
         _tableView = [UITableView newAutoLayoutView];
-        [_tableView setBackgroundColor:[UIColor colorWithWhite:0.5f alpha:1.0f]];
+        [_tableView setBackgroundColor:[UIColor colorWithWhite:0.9f alpha:1.0f]];
         [_tableView setDelegate:self];
         [_tableView setDataSource:self];
+        [_tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     }
     return _tableView;
 }
@@ -113,26 +119,30 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 51;
+    int index = (int)[indexPath indexAtPosition: [indexPath length] - 1];
+    
+    NSDictionary* rowData = [[self.receivedData valueForKeyPath:@"photos.photo"] objectAtIndex:index];
+    
+    float totalHeight = 70;
+    float imageHeight =  [[rowData objectForKey:@"height_z"] floatValue]*([[UIScreen mainScreen] bounds].size.width / [[rowData objectForKey:@"width_z"] floatValue]);
+    
+    return totalHeight + imageHeight;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 1;
+    return [[self.receivedData valueForKeyPath:@"photos.photo"] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     int index = (int)[indexPath indexAtPosition: [indexPath length] - 1];
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[NSString stringWithFormat:@"TrackRecordCell%d",index]];
+    CellData* data = [[CellData alloc] init];
+    [data fillWithData:[[self.receivedData valueForKeyPath:@"photos.photo"] objectAtIndex:index]];
     
-    if (cell!=nil)return cell;
-//
-    cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:[NSString stringWithFormat:@"TrackRecordCell%d",index]];
-    [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
-    [cell.contentView setFrame:CGRectMake(0, 0, 100, 50)];
-
+    PhotoCell* cell = [[PhotoCell alloc] init];
+    [cell fillWithData:data];
     
     return cell;
 }
@@ -140,13 +150,11 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    //  int index = (int)[indexPath indexAtPosition: [indexPath length] - 1];
     
 }
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    //[cell setBackgroundColor:[UIColor clearColor]];
 }
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath

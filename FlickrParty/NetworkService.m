@@ -29,7 +29,7 @@ NSString * const apiKey = @"59022a7698ebae38ddce0970a247accd";
                                  @"format": @"json",
                                  @"page":[NSNumber numberWithInt:page],
                                  @"per_page":@10,
-                                 @"extras": @"description,tags,owner_name,date_taken,url_sq,url_n,url_z,url_c,url_l,url_o",
+                                 @"extras": @"owner_name,date_taken,url_z,url_l,description,tags,icon_server",
                                  };
     
     
