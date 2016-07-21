@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MainViewController : UIViewController <UITableViewDelegate>
-
-@property (nonatomic, strong) UITableViewController* tableViewController;
+@interface MainViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 @end

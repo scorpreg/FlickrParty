@@ -9,5 +9,5 @@
 #import <Foundation/Foundation.h>
 
 @interface NetworkService : NSObject
-
+- (void)getFeedWithPage:(int)page completionHandler:(void (^)(id responseObject, NSError *error))completionHandler;
 @end
