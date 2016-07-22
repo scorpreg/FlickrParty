@@ -18,13 +18,15 @@
     self.tags = [data objectForKey:@"tags"];
     self.date = [data objectForKey:@"datetaken"];
     self.profilePictureURL = [NSString stringWithFormat:@"http://farm%@.staticflickr.com/%@/buddyicons/%@.jpg",[data objectForKey:@"iconfarm"],[data objectForKey:@"iconserver"],[data objectForKey:@"owner"]];
+    self.descriptionHtmlContent = [data valueForKeyPath:@"description.content"];
     self.photoURL_small = [data objectForKey:@"url_z"];
-    self.photoURL = [data objectForKey:@"url_l"];
     self.imageWidth_small = [[data objectForKey:@"width_z"] floatValue];
     self.imageHeight_small = [[data objectForKey:@"height_z"] floatValue];
-    self.imageWidth = [[data objectForKey:@"width_l"] floatValue];
-    self.imageHeight = [[data objectForKey:@"height_l"] floatValue];
-    self.descriptionHtmlContent = [data valueForKeyPath:@"description.content"];
+    
+    if([data objectForKey:@"url_l"])
+        self.photoURL = [data objectForKey:@"url_l"];
+    else
+        self.photoURL = [data objectForKey:@"url_z"];    
 }
 
 @end

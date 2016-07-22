@@ -12,7 +12,7 @@
 
 @property (nonatomic, strong) NSString* photoId;
 @property (nonatomic, strong) NSString* ownerName, *title , *descriptionHtmlContent, *tags, *profilePictureURL ,*photoURL_small,*photoURL, *date;
-@property float imageWidth_small, imageHeight_small, imageWidth, imageHeight;
+@property float imageWidth_small, imageHeight_small;
 
 - (void)fillWithData:(NSDictionary*)data;
 @end
