@@ -41,7 +41,6 @@ NSString * const apiKey = @"59022a7698ebae38ddce0970a247accd";
         
         if (error) {
             
-            NSLog(@"Error: %@", error);
             completionHandler(nil,error);
             
         } else {

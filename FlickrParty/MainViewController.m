@@ -48,16 +48,37 @@
 
 - (void)getFeedElements
 {
+    //Get feed objects from flicker API, then add the feedArray
     [[NetworkService alloc] getFeedWithPage:self.page completionHandler:^(id responseObject, NSError *error) {
-        //Get feed objects from flicker API, then add the feedArray
-        [self.feedArray addObjectsFromArray:[responseObject valueForKeyPath:@"photos.photo"]];
-        
-        self.totalPage = [[responseObject valueForKeyPath:@"photos.pages"] intValue];
-        [self.tableView reloadData];
-        
-        //If refresh control is still alive, then finish it.
-        if(self.refreshControl)
-        [self.refreshControl endRefreshing];
+        if (error) {
+            
+            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Alert" message:[NSString stringWithFormat:@"An error occured : %@",error] preferredStyle:UIAlertControllerStyleAlert];
+            [alertController addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action){}]];
+            [self presentViewController:alertController animated:YES completion:nil];
+            
+        }else{
+            //Check the JSON (never trust)
+            if ([[responseObject valueForKeyPath:@"photos.photo"] isKindOfClass:[NSArray class]]) {
+                
+                [self.feedArray addObjectsFromArray:[responseObject valueForKeyPath:@"photos.photo"]];
+                
+                self.totalPage = [[responseObject valueForKeyPath:@"photos.pages"] intValue];
+                [self.tableView reloadData];
+                
+                //If refresh control is still alive, then finish it.
+                if(self.refreshControl)
+                    [self.refreshControl endRefreshing];
+                
+            }else{
+                
+                UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Alert" message:[NSString stringWithFormat:@"Something went wrong. Please try again later."] preferredStyle:UIAlertControllerStyleAlert];
+                [alertController addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action){}]];
+                [self presentViewController:alertController animated:YES completion:nil];
+                
+            }
+            
+            
+        }
     }];
 }
 
